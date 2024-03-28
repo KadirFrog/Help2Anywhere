@@ -1,10 +1,15 @@
 {% load static %}
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+{% include 'header.html' %}
+<link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
 </head>
 <body>
+<p>{{ theme.color_palette.background_color.r }}</p>
 <h1>HOME</h1>
 </body>
 </html>
+{% endblock %}

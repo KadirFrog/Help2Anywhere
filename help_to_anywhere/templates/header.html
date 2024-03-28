@@ -1,0 +1,25 @@
+{% load static %}
+<link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+<style>
+    body {
+    background-color: rgb({{ theme.color_palette.background_color.r }}, {{ theme.color_palette.background_color.g }}, {{ theme.color_palette.background_color.b }})
+    }
+</style>
+<header>
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+    <nav>
+        <ul>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'profile' %}">Profil</a></li>
+            <li><a href="{% url 'logout' %}">Abmelden</a></li>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            {% if user.is_staff %}
+            <li><a href="{% url 'admin:index' %}">Admin Interface</a></li>
+            {% endif %}
+            {% else %}
+            <li><a href="{% url 'login' %}">Anmelden</a></li>
+            <li><a href="{% url 'signup' %}">Account erstellen</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>

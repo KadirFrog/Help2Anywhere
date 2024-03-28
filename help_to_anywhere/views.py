@@ -5,22 +5,24 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from .forms import CustomRegistrationForm, CustomAuthenticationForm
 from .forms import CustomRegistrationForm
+from .themes import Theme
 from .models import CustomUser
 
+theme: Theme = Theme("dark")
 
 @login_required
 def profile(request):
     device = request.META.get('HTTP_USER_AGENT', '').lower()
     user = request.user
-    print(request.user.telephone_number)
-    return render(request, "profile.html", {"device": device, "user": user})
+    print(theme.color_palette.background_color.r)
+    return render(request, "profile.html", {"device": device, "user": user, "theme": theme})
 
 
 @login_required
 def main(request):
     user = request.user
     device = request.META.get('HTTP_USER_AGENT', '').lower()
-    return render(request, 'main.html', {"user": user, 'device': device})
+    return render(request, 'main.html', {"user": user, 'device': device, "theme": theme})
 
 
 def signup(request):
@@ -32,7 +34,7 @@ def signup(request):
             return redirect('profile')
     else:
         form = CustomRegistrationForm()
-    return render(request, 'signup.html', {'form': form})
+    return render(request, 'signup.html', {'form': form, "theme": theme})
 
 
 def login_view(request):
@@ -47,7 +49,7 @@ def login_view(request):
             return redirect('profile')
     else:
         form = CustomAuthenticationForm()
-    return render(request, 'login.html', {'form': form, "user": user})
+    return render(request, 'login.html', {'form': form, "user": user, "theme": theme})
 
 
 def logout_view(request):
