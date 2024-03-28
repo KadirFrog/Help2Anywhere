@@ -1,0 +1,22 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'maincss.css' %}">
+<link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+<form method="post">
+  <h2>Bei Hausaufgaben+ registrieren</h2>
+  {% csrf_token %}
+  {{ form.username.label_tag }}<br>
+  {{ form.username }}<br>
+  {{ form.school_class.label_tag }}<br>
+  {{ form.school_class }}<br>
+  {{ form.school_id.label_tag }}<br>
+  {{ form.school_id }}<br>
+  {{ form.telephone_number.label_tag }}<br>
+  {{ form.telephone_number }}<br>
+  {{ form.password1.label_tag }}<br>
+  {{ form.password1 }}<br>
+  {{ form.password2.label_tag }}<br>
+  {{ form.password2 }}<br><br>
+  <button type="submit" class="box-button">Account Erstellen</button>
+</form>
+<br>
+<p>Haben sie schon einnen Account?  <a href="{% url 'login' %}" style="color: aliceblue;">Anmelden</a></p><br>
