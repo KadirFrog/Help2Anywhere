@@ -1,12 +1,61 @@
 {% load static %}
 <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
 <style>
+    /* init themes */
     body {
-    background-color: rgb({{ theme.color_palette.background_color.r }}, {{ theme.color_palette.background_color.g }}, {{ theme.color_palette.background_color.b }})
+    background-color: rgb({{ theme.color_palette.background_color.color_string }});
     }
+    h1 {
+    color: rgb({{ theme.color_palette.color_1.color_string }});
+    }
+    h2 {
+    color: rgb({{ theme.color_palette.color_2.color_string }});
+    }
+    h3 {
+    color: rgb({{ theme.color_palette.color_2.color_string }});
+    }
+    p {
+    color: rgb({{ theme.color_palette.color_3.color_string }});
+    }
+    /* Style the navigation bar */
+nav {
+  background-color: rgb({{ theme.color_palette.header_background_color.color_string }});
+  color: #fff;
+  padding: 10px;
+}
+
+/* Position the login button in the top right corner */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+}
+
+nav li {
+  margin-left: 10px;
+}
+
+/* Style the login button */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  background-image: linear-gradient(49deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  background-clip: text; /* Apply the gradient to the text */
+  -webkit-background-clip: text; /* For Safari compatibility */
+  transition: background-position 0.3s, color 0.3s; /* Add transition effects */
+}
+
+/* Hover effect for the login button */
+nav a:hover {
+  background-position: 100% 0; /* Move the background gradient to reveal the colors */
+  color: transparent; /* Hide the original text color */
+}
 </style>
 <header>
-    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'header.css' %}">
     <nav>
         <ul>
             {% if user.is_authenticated %}

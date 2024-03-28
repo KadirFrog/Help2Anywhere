@@ -1,3 +1,0 @@
-.background_color {
-    background_color: rgb({{ theme.color_palette.background_color.r }}, {{ theme.color_palette.background_color.g }}, {{ theme.color_palette.background_color.b }});
-}
