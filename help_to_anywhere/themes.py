@@ -8,12 +8,13 @@ class Color:
 
 class ColorPalette:
     def __init__(self, color_1: Color, color_2: Color, color_3: Color, header_background_color: Color,
-                 background_color: Color):
+                 background_color: Color, color_url: Color):
         self.color_1: Color = color_1
         self.color_2: Color = color_2
         self.color_3: Color = color_3
         self.header_background_color: Color = header_background_color
         self.background_color: Color = background_color
+        self.color_url: Color = color_url
 
 
 class FontPalette:
@@ -36,10 +37,11 @@ class Theme:
         color_1 = Color(236, 240, 241)  # Dark Blue
         color_2 = Color(52, 152, 219)  # Blue
         color_3 = Color(0, 102, 204)  # Deep Blue
+        color_url = Color(255, 0, 0)  # Red
         header_background_color = Color(79, 129, 189)  # Light Gray
         background_color = Color(34, 47, 62)  # Dark Blue-Gray
         self.color_palette: ColorPalette = ColorPalette(color_1, color_2, color_3, header_background_color,
-                                                        background_color)
+                                                        background_color, color_url)
         font_1 = "Arial, sans-serif"  # Main headings
         font_2 = "Helvetica, sans-serif"  # Subheadings
         font_3 = "Verdana, sans-serif"  # Paragraphs

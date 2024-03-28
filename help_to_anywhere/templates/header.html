@@ -4,6 +4,7 @@
     /* init themes */
     body {
     background-color: rgb({{ theme.color_palette.background_color.color_string }});
+    margin: 0;
     }
     h1 {
     color: rgb({{ theme.color_palette.color_1.color_string }});
@@ -17,6 +18,37 @@
     p {
     color: rgb({{ theme.color_palette.color_3.color_string }});
     }
+    form {
+    color: rgb({{ theme.color_palette.color_2.color_string }});
+   justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+    }
+    button {
+  display: inline-block;
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: 1px solid #ccc; /* Optional: Add border for visual clarity */
+  border-radius: 4px; /* Adjust border radius for desired shape */
+  font-size: 16px; /* Adjust font size */
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: auto; /* Let the button size itself according to its content */
+  height: auto; /* Let the button size itself according to its content */
+      transition: background-color 0.3s ease;
+    background-color: rgb({{ theme.color_palette.header_background_color.color_string }});
+    color: rgb({{ theme.color_palette.color_1.color_string }});
+    }
+    input {
+    background-color: rgb({{ theme.color_palette.header_background_color.color_string }});
+    color: rgb({{ theme.color_palette.color_1.color_string }});
+    }
+
+    a {
+     color: rgb({{ theme.color_palette.color_url.color_string }});
+     }
+
     /* Style the navigation bar */
 nav {
   background-color: rgb({{ theme.color_palette.header_background_color.color_string }});

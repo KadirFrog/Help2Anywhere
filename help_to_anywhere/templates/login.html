@@ -1,8 +1,10 @@
 {% load static %}
+{% include 'header.html' %}
 <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'maincss.css' %}">
+<center>
 <form method="post">
-  <h2>Bei Help2Anywhere anmelden</h2>
+  <h2>Bei <bold>Help2Anywhere</bold> anmelden</h2>
   {% csrf_token %}
   {{ form.username.label_tag }}
   {{ form.username }}
@@ -10,8 +12,9 @@
   {{ form.password.label_tag }}
   {{ form.password }}
   <br><br>
-  <button type="submit" class="box-button" style="height: 20%;">Anmelden</button>
+  <button type="submit" class="box-button">Anmelden</button>
 </form>
 
   <br>
-  <p>Haben sie noch keinen Account? <a href="{% url 'signup' %}" style="color: red;">Einenen Account erstellen</a></p>
+  <p>Haben sie noch keinen Account? <a href="{% url 'signup' %}">Einenen Account erstellen</a></p>
+</center>

@@ -1,13 +1,10 @@
 {% load static %}
 <head>
-  <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'headercss.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'maincss.css' %}">
   <title>Profil</title>
 </head>
 
 {% block content %}
-
+{% include 'header.html' %}
 
   <h2>Wilkommen, {{ user.username }}!</h2>
   <p>Schule: {{ user.school_id }}</p>
